@@ -20,8 +20,6 @@ export default function Home() {
     num: 0,
     res: 0,
   });
-  const [history, setHistory] = useState([])
-
 
   const handleClick = (e) => {
     const btn = e.target.value;
@@ -69,7 +67,7 @@ export default function Home() {
           ),
       num: 0,
     });
-    // setHistory(...history, { sign: btn })
+    setHistory(...history, { sign: btn })
   }
   const backspaceClick = (btn) => {
     console.log('backspace click', btn)
@@ -106,9 +104,7 @@ export default function Home() {
         sign: "",
         num: 0
       });
-/*       setHistory({ ...history, num2: calc.num, res: calc.res })
-      setCalc({ ...calc, num: 0 })
- */    }
+    }
   }
 
   const percentageClick = () => {
@@ -128,7 +124,6 @@ export default function Home() {
       num:
         calc.num === 0 ? btn : calc.num != 0 ? (calc.num + btn) : (calc.num + '.' + btn),
     })
-    // setHistory({ ...history, num1: btn })
   }
 
 
@@ -150,11 +145,6 @@ export default function Home() {
           }
         </div>
       </main>
-      {/* <ul>
-        {history.length > 0 ? history.map((el, index) =>
-          <li key="index"> {el.num1} {el.sign} {el.num2} = {el.res}</li>
-        ) : ""}
-      </ul> */}
     </div>
   )
 }
